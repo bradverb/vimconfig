@@ -76,6 +76,9 @@ set shiftwidth=4
 set tabstop=4
 set modeline
 
+" Python specific indentation
+autocmd Filetype python setlocal ts=8 et sw=4 sts=4
+
 " Smart/Auto Indents
 set ai
 set smartindent
@@ -99,8 +102,6 @@ set visualbell
 set t_vb=
 set tm=500
 
-" Python specific indentation
-autocmd Filetype python setlocal ts=8 et sw=4 sts=4
 " Make * and # searches work on selections in visual mode
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
@@ -167,13 +168,15 @@ function! VisualSelection(direction) range
     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
     if a:direction == 'b'
-        execute "normal ?" . l:pattern . "" 
+        execute "normal ?" . l:pattern . "
+" 
     elseif a:direction == 'gv' 
         call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/') 
     elseif a:direction == 'f' 
-        execute "normal /" . l:pattern . ""
+        execute "normal /" . l:pattern . "
+"
     endif
 
     let @/ = l:pattern
