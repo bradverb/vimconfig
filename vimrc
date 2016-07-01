@@ -12,6 +12,11 @@ set title
 " Allow backspacing over everything in insert mode
 set bs=indent,eol,start	
 
+"Move around in normal mode using info commands
+nnoremap <Space> <C-F>
+nnoremap <S-Space> <C-U>
+nnoremap <BS> <C-U>
+
 "Set backup		" keep a backup file
 
 " Read/write a .viminfo file, don't store morethan 50 lines of registers
