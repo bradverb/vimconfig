@@ -34,3 +34,6 @@
 [submodule "bundle/vim-sensible"]
 	path = bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible
+[submodule "bundle/vim-startify"]
+	path = bundle/vim-startify
+	url = https://github.com/mhinz/vim-startify
