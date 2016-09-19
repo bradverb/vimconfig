@@ -1,0 +1,6 @@
+pull in updates from windows
+  -> check for windows first since they seem to break work terminal
+  
+add font files as sub modules
+
+add powerline symbols manually in vimrc
