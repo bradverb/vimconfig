@@ -1,0 +1,19 @@
+Home computer:
+  install powerline fonts and patched powerline fonts using directions at:
+    http://bhilburn.org/moving-to-vim-airline-from-vim-powerline/
+    https://github.com/powerline/fonts
+    https://powerline.readthedocs.io/en/latest/installation/linux.html#patched-font-installation
+  Worked fine after that
+  
+Work (windows)
+  Install fonts using the powershell script in 2nd link above
+  Add to vimrc:
+    set endocing=utf-8
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+    
+Work (redhat)
+  install fonts as on home linux
+  cp all from .local/share/fonts/ to ~/.fonts (fc-cache in redhad doesn't seem to read the first dir)
+  run fc-cache -vf
+  change terminal profile to use the one of the "... for Powerline" fonts (should show up after running prev. cmds)
+  Side note: make sure to set environment variable GIT_CEILING_DIRECTORIES
